@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,55 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AItestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BoU-Oa-HQX">
+                                <rect key="frame" x="0.0" y="20" width="375" height="375"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UMh-2k-0gF">
+                                <rect key="frame" x="0.0" y="410" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="WAe-O3-d1T"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4y-x4-QZ6">
+                                <rect key="frame" x="133" y="617" width="108" height="30"/>
+                                <state key="normal" title="写真を選択する"/>
+                                <connections>
+                                    <action selector="tapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cuD-d7-kLg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UMh-2k-0gF" firstAttribute="centerX" secondItem="Q4y-x4-QZ6" secondAttribute="centerX" id="6bp-xF-uAv"/>
+                            <constraint firstItem="Q4y-x4-QZ6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="133" id="GDS-bF-zpC"/>
+                            <constraint firstItem="BoU-Oa-HQX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gcq-Fx-lks"/>
+                            <constraint firstItem="BoU-Oa-HQX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RSX-o5-dDg"/>
+                            <constraint firstAttribute="trailing" secondItem="BoU-Oa-HQX" secondAttribute="trailing" id="SJG-Q8-hdK"/>
+                            <constraint firstItem="BoU-Oa-HQX" firstAttribute="leading" secondItem="UMh-2k-0gF" secondAttribute="leading" id="TCJ-gZ-h8C"/>
+                            <constraint firstItem="BoU-Oa-HQX" firstAttribute="trailing" secondItem="UMh-2k-0gF" secondAttribute="trailing" id="UlG-kI-ENe"/>
+                            <constraint firstItem="UMh-2k-0gF" firstAttribute="top" secondItem="BoU-Oa-HQX" secondAttribute="bottom" constant="15" id="Vg2-Td-AmI"/>
+                            <constraint firstItem="Q4y-x4-QZ6" firstAttribute="top" secondItem="UMh-2k-0gF" secondAttribute="bottom" constant="7" id="tkb-rb-LZo"/>
+                            <constraint firstAttribute="bottom" secondItem="Q4y-x4-QZ6" secondAttribute="bottom" constant="20" symbolic="YES" id="uwK-zY-rq5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="myImageView" destination="BoU-Oa-HQX" id="EqI-eO-3r0"/>
+                        <outlet property="myTextView" destination="UMh-2k-0gF" id="ag6-TR-PMg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
