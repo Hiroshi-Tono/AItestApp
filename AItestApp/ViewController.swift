@@ -59,7 +59,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate,UIImagePi
         // モデルのリクエストを作り、予測結果が帰ってきたとき表示する
         let request = VNCoreMLRequest(model: model) {
             request, error in
-            quard let results = request.results as? [VNClassificationObservation] else {
+            guard let results = request.results as? [VNClassificationObservation] else {
                 return
             }
             for result in results {
